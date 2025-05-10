@@ -132,7 +132,7 @@
 /* Hero */
 .hero {
   height: 80vh;
-  background-image: url('images/hero.JPG');
+  background-image: url('images/hero.webp');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -719,14 +719,14 @@
 
   /* Asegurar que el contenido siempre esté arriba y la imagen abajo */
   .section-content {
-    order: 1; /* Contenido primero */
+    order: 1 !important; /* Contenido primero */
     padding: 40px 20px;
     text-align: center;
     width: 100%;
   }
 
   .section-image {
-    order: 2; /* Imagen después */
+    order: 2 !important; /* Imagen después */
     height: 300px; /* Altura uniforme para las imágenes */
     width: 100%; /* Asegurar que ocupe todo el ancho */
   }
