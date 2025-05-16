@@ -20,7 +20,7 @@
 
 /* Header */
 .header-top {
-  background-color: #1A3C5A;
+  background-color: #59BEC9;
   color: white;
   padding: 10px 40px;
   display: flex;
@@ -45,7 +45,7 @@
 .header-email i,
 .header-address i {
   margin-right: 8px;
-  color: #D4A017;
+  color: #ffca44;
 }
 
 .header-social a {
@@ -57,10 +57,10 @@
 
 .header-social a:hover,
 .header-social a:focus {
-  color: #D4A017;
+  color: #ffca44;
 }
 .header-main {
-  background-color: #1A3C5A;
+  background-color: #59BEC9;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,7 +78,7 @@
 
 .header-main .logo .logo-ristorante {
   font-family: 'Dancing Script', cursive;
-  color: #D4A017;
+  color: #ffca44;
   font-size: 24px;
   margin-right: 10px;
 }
@@ -126,7 +126,7 @@
 
 .nav-links a:hover,
 .nav-links a:focus {
-  color: #D4A017;
+  color: #ffca44;
 }
 
 /* Hero */
@@ -189,7 +189,7 @@
 }
 
 .hero .buttons .btn-info {
-  background-color: #5A8296;
+  background-color: #59BEC9;
   color: white;
 }
 
@@ -278,7 +278,7 @@
 
 .section-content h2 {
   font-size: 48px;
-  color: #1A3C5A;
+  color: #59BEC9;
 }
 
 .section-content h2 span {
@@ -350,7 +350,7 @@
 
 .menu-content h2 {
   font-size: 48px;
-  color: #1A3C5A;
+  color: #59BEC9;
 }
 
 .menu-content h2 span {
@@ -394,7 +394,7 @@
 
 .reservation-content h2 {
   font-size: 48px;
-  color: #1A3C5A;
+  color: #59BEC9;
 }
 
 .reservation-content h2 span {
@@ -445,7 +445,7 @@
   padding: 15px 30px;
   border-radius: 25px;
   font-size: 18px;
-  background-color: #A6D1DC;
+  background-color: #59BEC9;
   color: white;
   border: none;
   cursor: pointer;
@@ -562,14 +562,14 @@
 
 .contact-social .social-links a:hover,
 .contact-social .social-links a:focus {
-  background-color: #A6D1DC;
+  background-color: #59BEC9;
   color: white;
-  border-color: #A6D1DC;
+  border-color: #59BEC9;
 }
 
 /* Footer */
 .new-footer {
-  background-color: #1A3C5A;
+  background-color: #59BEC9;
   color: white;
   text-align: center;
   padding: 30px 20px;
@@ -592,7 +592,7 @@
 .new-footer .footer-social a:hover,
 .new-footer .footer-social a:focus {
   background-color: #A6D1DC;
-  color: #1A3C5A;
+  color: #ffca44;
 }
 
 .new-footer .footer-links {
@@ -608,7 +608,7 @@
 
 .new-footer .footer-links a:hover,
 .new-footer .footer-links a:focus {
-  color: #A6D1DC;
+  color: #ffca44;
 }
 
 .new-footer .footer-credits p {
@@ -624,7 +624,7 @@
 .footer-credits a{
   text-decoration: none;
   font-size: 14px;
-  color: #A6D1DC;
+  color: #ffca44;
 }
 
 /* Animations */
@@ -664,7 +664,7 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: #1A3C5A;
+    background-color: #59BEC9;
     padding: 20px 0;
   }
 
