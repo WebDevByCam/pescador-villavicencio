@@ -1,6 +1,6 @@
 ---
 // About Section
-const aboutImg = new URL('/images/about.webp', import.meta.url).href;
+import aboutImg from '../assets/images/about.webp';
 ---
 
 <section id="about" class="about image-right" aria-labelledby="about-title">
@@ -11,6 +11,6 @@ const aboutImg = new URL('/images/about.webp', import.meta.url).href;
     </p>
   </div>
   <div id="div1" class="section-image fade-in">
-    <img id="img1" loading="lazy" src={aboutImg} alt="Interior del restaurante Pescador con mesas y ambiente acogedor">
+    <img id="img1" loading="lazy" src={aboutImg.src} alt="Interior del restaurante Pescador con mesas y ambiente acogedor">
   </div>
 </section>

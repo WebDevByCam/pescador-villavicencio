@@ -1,11 +1,11 @@
 ---
 // Next Opening Section (Pastas)
-const pastaImg = new URL('/images/pasta.webp', import.meta.url).href;
+import pastaImg from '../assets/images/pasta.webp';
 ---
 
 <section class="next-opening image-left" aria-labelledby="pastas-title">
   <div class="section-image fade-in">
-    <img loading="lazy" src={pastaImg} alt="Plato de pasta con mariscos en Pescador">
+    <img loading="lazy" src={pastaImg.src} alt="Plato de pasta con mariscos en Pescador">
   </div>
   <div class="section-content fade-in">
     <h2 id="pastas-title">Pescador <span>Pastas</span></h2>

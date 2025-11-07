@@ -198,6 +198,23 @@
   background-color: #466B7D;
 }
 
+/* Base button styles */
+.btn-reserve {
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  background-color: #A6D1DC;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.btn-reserve:hover,
+.btn-reserve:focus {
+  background-color: #8BBAC4;
+}
+
 /* General Section Styles */
 .about,
 .location,
@@ -302,22 +319,6 @@
   text-align: justify;
 }
 
-.section-content .btn-reserve {
-  display: inline-block;
-  text-decoration: none;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-size: 18px;
-  background-color: #A6D1DC;
-  color: white;
-  width: fit-content;
-}
-
-.section-content .btn-reserve:hover,
-.section-content .btn-reserve:focus {
-  background-color: #8BBAC4;
-}
-
 #div1 {
   display: flex;
   justify-content: center;
@@ -365,21 +366,6 @@
   line-height: 1.6;
   color: #333;
   margin: 20px 0;
-}
-
-.menu-content .btn-reserve {
-  display: inline-block;
-  text-decoration: none;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-size: 18px;
-  background-color: #A6D1DC;
-  color: white;
-}
-
-.menu-content .btn-reserve:hover,
-.menu-content .btn-reserve:focus {
-  background-color: #8BBAC4;
 }
 
 /* Reservation Form Section */
@@ -444,11 +430,7 @@
 }
 
 .reservation-content .btn-reserve {
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-size: 18px;
   background-color: #59BEC9;
-  color: white;
   border: none;
   cursor: pointer;
 }

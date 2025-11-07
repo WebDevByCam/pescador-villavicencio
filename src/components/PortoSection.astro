@@ -1,6 +1,6 @@
 ---
 // Porto Section (Arroces)
-const arrozImg = new URL('/images/arroz.webp', import.meta.url).href;
+import arrozImg from '../assets/images/arroz.webp';
 ---
 
 <section class="porto image-right" aria-labelledby="arroces-title">
@@ -12,6 +12,6 @@ const arrozImg = new URL('/images/arroz.webp', import.meta.url).href;
     </p>
   </div>
   <div class="section-image fade-in">
-    <img src={arrozImg} alt="Arroz con mariscos servido en Pescador Puerto Azul">
+    <img src={arrozImg.src} alt="Arroz con mariscos servido en Pescador Puerto Azul">
   </div>
 </section>
