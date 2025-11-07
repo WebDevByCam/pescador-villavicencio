@@ -1,0 +1,90 @@
+---
+// Reservation Form Section
+---
+
+<section id="reservas" class="reservation-section" aria-labelledby="reservation-title">
+  <div class="reservation-content fade-in">
+    <h2 id="reservation-title"><span>Reserva</span> Tu Mesa</h2>
+    <div class="underline"></div>
+    <p>Completa el formulario para reservar tu mesa en Pescador. ¡Te esperamos!</p>
+    <form id="reservation-form" role="form" aria-label="Formulario de reservas">
+      <div class="form-group">
+        <label for="date">Fecha:</label>
+        <input type="date" id="date" name="date" required aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="time">Hora:</label>
+        <input type="time" id="time" name="time" required aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="guests">Número de Personas:</label>
+        <input type="number" id="guests" name="guests" min="1" required aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="name">A Nombre de:</label>
+        <input type="text" id="name" name="name" required aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="phone">Número de Contacto:</label>
+        <input type="tel" id="phone" name="phone" required aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="message">Mensaje (Opcional):</label>
+        <textarea id="message" name="message" aria-label="Mensaje opcional"></textarea>
+      </div>
+      <button type="submit" class="btn-reserve">Enviar Reserva</button>
+    </form>
+    <div id="success-message" class="success-message">
+      ¡Reserva enviada con éxito! Te contactaremos pronto.
+    </div>
+  </div>
+</section>
+
+<script>
+  // Reservation form submission to WhatsApp
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('reservation-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Get form values
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const guests = document.getElementById('guests').value;
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      // Create WhatsApp message
+      const whatsappNumber = '+573143352544';
+      const whatsappMessage = `Hola! Me gustaría hacer una reserva en Pescador, por favor%0A%0A` +
+        `Fecha: ${date}%0A` +
+        `Hora: ${time}%0A` +
+        `Número de personas: ${guests}%0A` +
+        `A nombre de: ${name}%0A` +
+        `Número de contacto: ${phone}%0A` +
+        (message ? `Mensaje: ${message}%0A` : '');
+
+      // Create WhatsApp URL
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank');
+
+      // Show success message
+      successMessage.style.display = 'block';
+      successMessage.style.opacity = '1';
+      form.reset();
+
+      // Hide the message after 3 seconds
+      setTimeout(() => {
+        successMessage.style.opacity = '0';
+        setTimeout(() => {
+          successMessage.style.display = 'none';
+        }, 500);
+      }, 3000);
+    });
+  });
+</script>
