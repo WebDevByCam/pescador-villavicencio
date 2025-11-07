@@ -1,10 +1,11 @@
 ---
 // Location Section (Paellas)
+const paellaImg = new URL('/images/paella.webp', import.meta.url).href;
 ---
 
 <section class="location image-left" aria-labelledby="paellas-title">
   <div class="section-image fade-in">
-    <img loading="lazy" src="/images/paella.webp" alt="Deliciosa paella de mariscos en Pescador">
+    <img loading="lazy" src={paellaImg} alt="Deliciosa paella de mariscos en Pescador">
   </div>
   <div class="section-content fade-in">
     <h2 id="paellas-title">Pescador <span>Paellas</span></h2>

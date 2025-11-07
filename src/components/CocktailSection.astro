@@ -1,5 +1,6 @@
 ---
 // Cocktail & Wine Bar Section
+const bebidaImg = new URL('/images/bebida.webp', import.meta.url).href;
 ---
 
 <section class="cocktail-wine image-right" aria-labelledby="cocktail-title">
@@ -10,6 +11,6 @@
     </p>
   </div>
   <div id="div2" class="section-image fade-in">
-    <img id="img2" loading="lazy" src="/images/bebida.webp" alt="Cóctel exclusivo servido en el bar de Pescador">
+    <img id="img2" loading="lazy" src={bebidaImg} alt="Cóctel exclusivo servido en el bar de Pescador">
   </div>
 </section>
