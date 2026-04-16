@@ -1,16 +1,26 @@
 ---
 // About Section
-import aboutImg from '../assets/images/about.webp';
+import aboutImgSmall from '../assets/images/optimized/foto-1-480.webp';
+import aboutImgLarge from '../assets/images/optimized/foto-1.webp';
 ---
 
 <section id="about" class="about image-right" aria-labelledby="about-title">
   <div class="section-content fade-in">
     <h2 id="about-title" style="padding-bottom: 30px;">Pescador <span>Restaurante</span></h2>
     <p>
-      Pescador Restaurante, ubicado en el emblemático sector de Caudal Oriental en Villavicencio, es un destino imperdible para los amantes de los mariscos y pescados frescos. Enraizado en la rica tradición culinaria de la región, nos destacamos por nuestro enfoque en ofrecer platillos elaborados con los mejores ingredientes del mercado, brindando una experiencia gastronómica auténtica que celebra los sabores del mar. ¡Descubre por qué Pescador se ha convertido en un referente de la cocina de mar en Villavicencio!
+      <strong>Pescador Restaurante</strong>, ubicado en el emblemático sector del <strong>Caudal Oriental</strong>, es un punto de encuentro para quienes disfrutan la verdadera cocina de mar en Villavicencio. Aquí, el mar se siente en cada detalle.
+    </p>
+    <p>
+      <strong>Nacido de la tradición familiar y de un profundo respeto por los sabores del Pacífico y el Caribe</strong>, Pescador se ha consolidado como uno de los <strong>restaurantes de mar más reconocidos de la ciudad</strong>, gracias a una propuesta que combina producto fresco, técnica cuidada y un ambiente cálido que invita a quedarse.
+    </p>
+    <p>
+      Cada plato refleja nuestra esencia: ingredientes de calidad, recetas con historia y una experiencia que evoca la serenidad del mar. Por eso, quienes nos visitan no solo vienen a comer bien: vienen a vivir un momento que se siente auténtico, cercano y memorable.
+    </p>
+    <p>
+      <strong>Descubre por qué Pescador es hoy un referente de la cocina de mar en Villavicencio.</strong>
     </p>
   </div>
   <div id="div1" class="section-image fade-in">
-    <img id="img1" loading="lazy" src={aboutImg.src} alt="Interior del restaurante Pescador con mesas y ambiente acogedor">
+    <img id="img1" loading="lazy" src={aboutImgLarge.src} srcset={`${aboutImgSmall.src} 480w, ${aboutImgLarge.src} 1600w`} sizes="(max-width:600px) 480px, 1600px" alt="Foto 1 - Interior del restaurante Pescador" />
   </div>
 </section>

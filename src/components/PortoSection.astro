@@ -1,6 +1,7 @@
 ---
 // Porto Section (Arroces)
-import arrozImg from '../assets/images/arroz.webp';
+import arrozSmall from '../assets/images/optimized/arroz-480.webp';
+import arrozLarge from '../assets/images/optimized/arroz.webp';
 ---
 
 <section class="porto image-right" aria-labelledby="arroces-title">
@@ -8,10 +9,22 @@ import arrozImg from '../assets/images/arroz.webp';
     <h2 id="arroces-title">Pescador <span>Arroces</span></h2>
     <div class="underline fade-in"></div>
     <p>
-      Nuestros arroces son una especialidad que combina tradición y creatividad. El Arroz Premium, salteado al wok con maestría, ofrece un balance perfecto entre arroz blanco y un delicado toque dulce de coco, acompañado de vegetales frescos y una selección exquisita de camarones, mariscos variados o el único arroz de jaiba. En Pescador Restaurante, cada plato es preparado con ingredientes de alta calidad, para ofrecerte una experiencia culinaria única que fusiona sabores tropicales y tradicionales en Villavicencio.
+      Nuestros arroces son parte esencial de nuestra tradición de cocina de mar. Trabajamos con <strong>arroz premium</strong> salteado con vegetales frescos, logrando una base suave, aromática y llena de sabor.
+    </p>
+    <p>
+      <strong>El Arroz de Camarones</strong> destaca por su sencillez y frescura, donde el camarón es el protagonista.
+    </p>
+    <p>
+      <strong>El Arroz Marisquero</strong> reúne camarones, langostinos, anillos de calamar y mejillones en una combinación generosa y equilibrada.
+    </p>
+    <p>
+      y<strong> el Arroz de Jaiba</strong>, una preparación poco común en la ciudad, ofrece un sabor profundo y auténtico que conecta con nuestras raíces marineras.
+    </p>
+    <p>
+      Cada uno de estos platos es preparado al momento, con ingredientes de calidad y el sello que distingue a Pescador: sabor, tradición y el toque del mar en cada bocado.
     </p>
   </div>
   <div class="section-image fade-in">
-    <img src={arrozImg.src} alt="Arroz con mariscos servido en Pescador Puerto Azul">
+    <img loading="lazy" src={arrozLarge.src} srcset={`${arrozSmall.src} 480w, ${arrozLarge.src} 1600w`} sizes="(max-width:600px) 480px, 800px" alt="Arroz con mariscos servido en Pescador Puerto Azul">
   </div>
 </section>

@@ -129,6 +129,14 @@
   color: #ffca44;
 }
 
+/* Logo image sizing: reducir el logo al 50% de su tamaño actual */
+.header-main .logo .site-logo-img {
+  width: 60%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+}
+
 /* Hero */
 .hero {
   height: 80vh;

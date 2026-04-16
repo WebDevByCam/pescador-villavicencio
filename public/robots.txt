@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap is referenced at root; update to absolute URL in production if desired.
+Sitemap: /sitemap.xml

@@ -1,46 +1,93 @@
 ---
 export interface Props {
-	title: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  noindex?: boolean;
 }
 
-const { title } = Astro.props;
+const {
+  title = 'Pescador Villavicencio',
+  description = 'Pescador - Restaurante. Disfruta de paellas, arroces, pastas y cócteles exclusivos en Villavicencio. Reserva tu mesa ahora.',
+  image,
+  url,
+  noindex = false,
+} = Astro.props as Props;
+
 import '../styles.css';
+import defaultImage from '../assets/images/optimized/fachada-1.webp';
+
+const site = import.meta.env.SITE ?? '';
+const metaTitle = title.includes('Pescador') ? title : `${title} | Pescador Villavicencio`;
+const metaDescription = description;
+const metaImage = image ?? defaultImage.src;
+const canonical = url ? (url.startsWith('http') ? url : (site ? `${site}${url}` : url)) : (site || '/');
+const robots = noindex ? 'noindex, nofollow' : 'index, follow';
 ---
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pescador - Restaurante Excelente lugar para degustar de una exquisita comida de mar en Villavicencio. Disfruta de paellas, arroces, pastas y cócteles exclusivos. Reserva tu mesa ahora.">
-  <meta name="keywords" content="restaurante, mariscos, Pescador, Villavicencio, paellas, arroces, pastas, cócteles, reservas">
-  <meta name="author" content="WebDevByCam">
-  <meta name="robots" content="index, follow">
-  <title>{title}</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14'%3E%3C/text%3E%3C/svg%3E">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={metaDescription} />
+  <meta name="keywords" content="restaurante, mariscos, Pescador, Villavicencio, paellas, arroces, pastas, cócteles, reservas" />
+  <meta name="author" content="Pescador Villavicencio" />
+  <meta name="robots" content={robots} />
+  <meta name="theme-color" content="#59BEC9" />
+
+  <title>{metaTitle}</title>
+
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:title" content={metaTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={metaImage} />
+  <meta property="og:image:alt" content="Pescador Restaurante" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={metaTitle} />
+  <meta name="twitter:description" content={metaDescription} />
+  <meta name="twitter:image" content={metaImage} />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14'%3E%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display:wght@400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      name: 'Pescador',
+      description: metaDescription,
+      image: metaImage,
+      telephone: '+57 314 335 2544',
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: 'Cra 29a 45-80',
+        addressLocality: 'Villavicencio',
+        addressRegion: 'Meta',
+        addressCountry: 'CO'
+      },
+      sameAs: [
+        'https://www.instagram.com/pescadorvillavicencio',
+        'https://www.facebook.com/PescadorVillavicencio/'
+      ],
+      url: canonical
+    })}
+  </script>
+
 </head>
 <body>
   <slot />
-  <script is:inline>
-    // Fade-in animation on scroll
-    document.addEventListener('DOMContentLoaded', () => {
-      const fadeInElements = document.querySelectorAll('.fade-in');
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      fadeInElements.forEach(element => {
-        observer.observe(element);
-      });
-    });
-  </script>
+  <script type="module" src="/script.js" defer></script>
 </body>
 </html>

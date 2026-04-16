@@ -1,6 +1,7 @@
 ---
 // Cocktail & Wine Bar Section
-import bebidaImg from '../assets/images/bebida.webp';
+import bebidaSmall from '../assets/images/optimized/foto-3-480.webp';
+import bebidaLarge from '../assets/images/optimized/foto-3.webp';
 ---
 
 <section class="cocktail-wine image-right" aria-labelledby="cocktail-title">
@@ -11,6 +12,6 @@ import bebidaImg from '../assets/images/bebida.webp';
     </p>
   </div>
   <div id="div2" class="section-image fade-in">
-    <img id="img2" loading="lazy" src={bebidaImg.src} alt="Cóctel exclusivo servido en el bar de Pescador">
+    <img id="img2" loading="lazy" src={bebidaLarge.src} srcset={`${bebidaSmall.src} 480w, ${bebidaLarge.src} 1600w`} sizes="(max-width:600px) 480px, 800px" alt="Foto 3 - Cóctel servido en Pescador" />
   </div>
 </section>

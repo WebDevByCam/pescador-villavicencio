@@ -1,9 +1,12 @@
 ---
 // Hero Section
-const heroImg = new URL('/images/hero.webp', import.meta.url).href;
+import fach1 from '../assets/images/optimized/fachada-1.webp';
+import fach2 from '../assets/images/optimized/fachada-2.webp';
+import fach3 from '../assets/images/optimized/fachada-3.webp';
+import fach4 from '../assets/images/optimized/fachada-4.webp';
 ---
 
-<section class="hero" aria-labelledby="hero-title">
+<section id="hero" class="hero" aria-labelledby="hero-title" style={`background-image: url('${fach1.src}');`} data-images={JSON.stringify([fach1.src, fach2.src, fach3.src, fach4.src])}>
   <div class="fade-in">
     <h2 id="hero-title"><span>Sabores del Mar</span> Inolvidables</h2>
     <div class="buttons">
@@ -11,4 +14,4 @@ const heroImg = new URL('/images/hero.webp', import.meta.url).href;
       <a href="#info" class="btn-info">Más Información</a>
     </div>
   </div>
-</section>
+  </section>

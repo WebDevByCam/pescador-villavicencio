@@ -1,11 +1,12 @@
 ---
 // Location Section (Paellas)
-import paellaImg from '../assets/images/paella.webp';
+import paellaSmall from '../assets/images/optimized/paella-480.webp';
+import paellaLarge from '../assets/images/optimized/paella.webp';
 ---
 
 <section class="location image-left" aria-labelledby="paellas-title">
   <div class="section-image fade-in">
-    <img loading="lazy" src={paellaImg.src} alt="Deliciosa paella de mariscos en Pescador">
+    <img loading="lazy" src={paellaLarge.src} srcset={`${paellaSmall.src} 480w, ${paellaLarge.src} 1600w`} sizes="(max-width:600px) 480px, 800px" alt="Deliciosa paella de mariscos en Pescador">
   </div>
   <div class="section-content fade-in">
     <h2 id="paellas-title">Pescador <span>Paellas</span></h2>

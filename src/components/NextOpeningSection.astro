@@ -1,17 +1,24 @@
 ---
 // Next Opening Section (Pastas)
-import pastaImg from '../assets/images/pasta.webp';
+import pastaSmall from '../assets/images/optimized/foto-2-480.webp';
+import pastaLarge from '../assets/images/optimized/foto-2.webp';
 ---
 
 <section class="next-opening image-left" aria-labelledby="pastas-title">
   <div class="section-image fade-in">
-    <img loading="lazy" src={pastaImg.src} alt="Plato de pasta con mariscos en Pescador">
+    <img loading="lazy" src={pastaLarge.src} srcset={`${pastaSmall.src} 480w, ${pastaLarge.src} 1600w`} sizes="(max-width:600px) 480px, 800px" alt="Foto 2 - Pasta con mariscos en Pescador">
   </div>
   <div class="section-content fade-in">
     <h2 id="pastas-title">Pescador <span>Pastas</span></h2>
     <div class="underline"></div>
     <p>
-      Nosotros elevamos la experiencia de las pastas con una variedad irresistible que incluye fettuccine, vermicelli de frijol verde y espagueti, todos elaborados con técnicas artesanales. Nuestras preparaciones destacan por bases únicas como la pasta natural hecha con tomates asados, una salsa oriental enriquecida con ajonjolí y tamarindo, y un fino velouté aterciopelado que envuelve los ingredientes. Cada plato combina la frescura de los mariscos locales con sabores innovadores, convirtiendo a Pescador en un punto de referencia para los amantes de la pasta en Villavicencio.
+      En <strong>Pescador</strong>, llevamos la experiencia de la pasta a un nivel distinto, combinando sabores del mar con preparaciones cuidadas y una selección de formatos que van desde el <strong>spaguetti</strong> hasta el <strong>fettuccine</strong> y el <strong>vermicelli vietnamita</strong>.
+    </p>
+    <p>
+      Nuestra carta incluye opciones únicas como el <strong>Spaguetti con carne de langosta</strong>, una preparación que resalta la suavidad y el carácter del producto; el <strong>Vermicelli vietnamita con langosta baby</strong>, con una salsa de inspiración oriental a base de tamarindo, chile dulce y vegetales salteados; y el <strong>Fettuccine con camarón</strong>, una mezcla equilibrada entre frescura y cremosidad.
+    </p>
+    <p>
+      Para quienes buscan una experiencia más completa, el <strong>Fettuccine Pescador</strong> combina langostino, camarones, anillos de calamar y mejillones, convirtiéndose en uno de los platos más representativos de nuestra cocina. También contamos con preparaciones clásicas como la <strong>Fideuá</strong>, ideal para compartir, y pastas vegetarianas como el <strong>Espagueti Pomodoro</strong>, preparado con tomates asados y albahaca, o el <strong>Espagueti Alfredo</strong>, suave y reconfortante.
     </p>
   </div>
 </section>

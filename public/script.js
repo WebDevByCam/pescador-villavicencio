@@ -70,4 +70,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500);
     }, 3000);
   });
+
+    // Hero background carousel (reads image URLs from data-images on the #hero element)
+    const heroEl = document.getElementById('hero');
+    if (heroEl && heroEl.dataset && heroEl.dataset.images) {
+      let images = [];
+      try {
+        images = JSON.parse(heroEl.dataset.images);
+      } catch (err) {
+        images = [];
+      }
+      if (images.length) {
+        let idx = 0;
+        heroEl.style.backgroundSize = 'cover';
+        heroEl.style.backgroundPosition = 'center';
+        heroEl.style.transition = 'background-image 0.6s ease-in-out';
+        setInterval(() => {
+          idx = (idx + 1) % images.length;
+          heroEl.style.backgroundImage = `url('${images[idx]}')`;
+        }, 3000);
+      }
+    }
 });
